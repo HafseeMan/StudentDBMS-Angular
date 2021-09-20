@@ -1,0 +1,41 @@
+<div class="container custom-container-2">
+
+    <!-- Show it when there is no Student -->
+    <div class="no-data text-center" *ngIf="Students.length == 0">
+      <p>There are no students added yet!</p>
+      <hr>
+      <p>Kindly use form in right panel to add Students and get started</p>
+    </div>
+  
+    <!-- Student list table, it hides when there is no student -->
+    <div *ngIf="Students.length !== 0">
+      <h3 class="mb-3 text-center">Student List</h3>
+  
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Reg no.</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Second Name</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Course</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of Students">
+              <td>{{ student.id}}</td>
+              <td>{{ student.fname}}</td>
+              <td>{{ student.sname}}</td>
+              <td>{{ student.gender}}</td>
+              <td>{{ student.course}}</td>
+                <span class="edit" routerLink="/student-edit/{{student.id}}"> Edit </span>
+                <span class="delete" (click)="deleteStudent(student.id)"> Delete </span>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>

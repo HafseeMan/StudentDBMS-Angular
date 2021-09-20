@@ -1,0 +1,32 @@
+<div class="card shadow mb-4">
+  <!-- Card Header - Dropdown -->
+  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+  <h6 class="m-0 font-weight-bold text-primary">Add Student</h6>
+  </div>
+  <!-- Card Body -->
+  <div class="card-body pb-0" style="min-height: 300px;">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="studentDetails.id" class="form-control" placeholder="Reg No.">
+          </div>
+
+          <div class="form-group">
+            <input type="text" [(ngModel)]="studentDetails.course" class="form-control" placeholder="Course">
+          </div> 
+
+          <div class="form-group ">
+            <input type="text" [(ngModel)]="studentDetails.fname" class="form-control" placeholder="First Name">
+          </div>
+      
+          <div class="form-group">
+            <input type="text" [(ngModel)]="studentDetails.sname" class="form-control" placeholder="Second Name">
+          </div>
+      
+          <div class="form-group">
+            <input type="text" [(ngModel)]="studentDetails.gender" class="form-control" placeholder="Gender">
+          </div>  
+               
+          <div class="form-group">
+            <button class="btn btn-outline-dark mx-auto m-0 w-25 p-1 btn-lg btn-block" (click)="addStudent()">Add</button>
+           </div>
+  </div>
+</div>    

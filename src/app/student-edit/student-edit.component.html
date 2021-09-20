@@ -1,0 +1,31 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+      <h3 class="mb-3 text-center">Update Student</h3>
+    <div class="row">
+       <div class="form-group col-6">
+        <input type="text" class="form-control" [(ngModel)]="studentData.id" placeholder="Reg No.">
+      </div>
+
+      <div class="form-group col-6">
+        <input type="text"  class="form-control" [(ngModel)]="studentData.course" placeholder="Course">
+      </div>  
+      
+      <div class="form-group col-4">
+        <input type="text" class="form-control" [(ngModel)]="studentData.fname" placeholder="First Name">
+      </div>
+  
+      <div class="form-group col-4">
+        <input type="text"  class="form-control" [(ngModel)]="studentData.sname" placeholder="Second Name">
+      </div>
+
+      <div class="form-group col-4">
+        <input type="text"  class="form-control" [(ngModel)]="studentData.gender" placeholder="Gender">
+      </div>
+    </div>
+     
+      <div class="form-group">
+        <button class="btn btn-success w-25 mx-auto btn-lg btn-block" (click)="updateStudent()">Update</button>
+      </div>
+  
+    </div>
+  </div>
