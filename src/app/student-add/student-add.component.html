@@ -5,28 +5,39 @@
   </div>
   <!-- Card Body -->
   <div class="card-body pb-0" style="min-height: 300px;">
+        <form [formGroup] = "addForm">
           <div class="form-group">
-            <input type="text" [(ngModel)]="studentDetails.id" class="form-control" placeholder="Reg No.">
+            <input type="text" [(ngModel)]="studentDetails.id" 
+            class="form-control"  placeholder="Reg No.">
+            <small class="text-danger" >Required</small>
           </div>
 
           <div class="form-group">
-            <input type="text" [(ngModel)]="studentDetails.course" class="form-control" placeholder="Course">
+            <input type="text" [(ngModel)]="studentDetails.course"
+             class="form-control" placeholder="Course">
           </div> 
 
           <div class="form-group ">
-            <input type="text" [(ngModel)]="studentDetails.fname" class="form-control" placeholder="First Name">
+            <input type="text" [(ngModel)]="studentDetails.fname" 
+            class="form-control" placeholder="First Name">
           </div>
       
           <div class="form-group">
-            <input type="text" [(ngModel)]="studentDetails.sname" class="form-control" placeholder="Second Name">
+            <input type="text" [(ngModel)]="studentDetails.sname"
+            class="form-control"  placeholder="Second Name">
           </div>
       
           <div class="form-group">
-            <input type="text" [(ngModel)]="studentDetails.gender" class="form-control" placeholder="Gender">
+            <input type="text" [(ngModel)]="studentDetails.gender" 
+            class="form-control" placeholder="Gender">
           </div>  
                
           <div class="form-group">
-            <button class="btn btn-outline-dark mx-auto m-0 w-25 p-1 btn-lg btn-block" (click)="addStudent()">Add</button>
+            <button class="btn btn-outline-dark mx-auto m-0 w-25 p-1 btn-lg btn-block"
+            type="submit"
+            (click)="addStudent()">Add</button>
            </div>
-  </div>
+
+        </form>
+      </div>
 </div>    
