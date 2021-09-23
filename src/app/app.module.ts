@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
+//import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 import { AppComponent } from './app.component';
 import { StudentDisplayComponent } from './student-display/student-display.component';
@@ -18,14 +19,15 @@ import { CardComponent } from './card/card.component';
     StudentDisplayComponent,
     StudentEditComponent,
     StudentAddComponent,
-    CardComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+//    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
