@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestApiService } from './rest-api.service.ts.service';
 
 
 @Component({
@@ -8,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AppComponent implements OnInit{
+/**To get info for cards from database *************/
+Students: any = []
+constructor(
+  public restApi: RestApiService
+) { }
 
-  constructor(){}
+ngOnInit(): void {
+  this.loadStudents()
+}
 
-  ngOnInit(){
-
-  }
+//Get student list from json
+loadStudents(){
+  return this.restApi.getStudents().subscribe(
+    (data: {}) => {
+      //Load data from json to this local array
+      this.Students = data; 
+    }
+  )
+}
 }

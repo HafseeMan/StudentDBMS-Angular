@@ -1,31 +1,43 @@
-<div class="container custom-container">
-    <div class="col-md-12">
-      <h3 class="mb-3 text-center">Update Student</h3>
-    <div class="row">
-       <div class="form-group col-6">
-        <input type="text" class="form-control" [(ngModel)]="studentData.id" placeholder="Reg No.">
-      </div>
+<div class="card shadow mb-5">
+  <!-- Card Header - Dropdown -->
+  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Update Record</h6>
+  </div>
+  <!-- Card Body -->
+  <div class="card-body">
+    <div class="container-fluid custom-container-2">
+      <div class="row">
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <input type="text" class="form-control" disabled [(ngModel)]="studentData.id" placeholder="Reg No.">
+        </div>
 
-      <div class="form-group col-6">
-        <input type="text"  class="form-control" [(ngModel)]="studentData.course" placeholder="Course">
-      </div>  
-      
-      <div class="form-group col-4">
-        <input type="text" class="form-control" [(ngModel)]="studentData.fname" placeholder="First Name">
-      </div>
-  
-      <div class="form-group col-4">
-        <input type="text"  class="form-control" [(ngModel)]="studentData.sname" placeholder="Second Name">
-      </div>
+        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <input type="text"  class="form-control" [(ngModel)]="studentData.course" placeholder="Course">
+        </div>  
+        
+        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <input type="text" class="form-control" [(ngModel)]="studentData.fname" placeholder="First Name">
+        </div>
+    
+        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <input type="text"  class="form-control" [(ngModel)]="studentData.sname" placeholder="Second Name">
+        </div>
 
-      <div class="form-group col-4">
-        <input type="text"  class="form-control" [(ngModel)]="studentData.gender" placeholder="Gender">
-      </div>
-    </div>
-     
-      <div class="form-group">
-        <button class="btn btn-success w-25 mx-auto btn-lg btn-block" (click)="updateStudent()">Update</button>
-      </div>
-  
+        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <input type="text"  class="form-control" [(ngModel)]="studentData.gender" placeholder="Gender">
+        </div>
+      </div> 
+      <div class="form-group row mt-2 ">
+      <!--Update Submit button-->
+        <button class="btn btn-primary w-25 float-left mx-auto btn-sm p-0 " (click)="updateStudent()">
+          Update
+        </button>
+      <!--Cancel back button-->
+      <button class="btn btn-outline-dark w-25 float-right mx-auto btn-sm" (click)="backToDisplay()">
+        Cancel
+      </button>
+      </div>   
+
     </div>
   </div>
+</div>

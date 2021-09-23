@@ -10,6 +10,7 @@ import { StudentEditComponent } from './student-edit/student-edit.component';
 import { StudentAddComponent } from './student-add/student-add.component'
 
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     StudentDisplayComponent,
     StudentEditComponent,
     StudentAddComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

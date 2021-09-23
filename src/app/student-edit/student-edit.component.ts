@@ -30,9 +30,14 @@ export class StudentEditComponent implements OnInit {
     if(window.confirm("Are you sure you want to save changes?")){
       this.restApi.updateStudent(this.id, this.studentData).subscribe(
         (data: {}) => {
-          this.router.navigate(['/student-list'])
+          this.router.navigate(['/student-display'])
         }
       )
     }    
+  }
+
+  backToDisplay(){
+    this.router.navigate(['/student-display'])
+    
   }
 }

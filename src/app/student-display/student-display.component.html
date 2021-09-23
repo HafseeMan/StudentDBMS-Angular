@@ -1,41 +1,48 @@
-<div class="container custom-container-2">
-
-    <!-- Show it when there is no Student -->
-    <div class="no-data text-center" *ngIf="Students.length == 0">
-      <p>There are no students added yet!</p>
-      <hr>
-      <p>Kindly use form in right panel to add Students and get started</p>
-    </div>
-  
-    <!-- Student list table, it hides when there is no student -->
-    <div *ngIf="Students.length !== 0">
-      <h3 class="mb-3 text-center">Student List</h3>
-  
-      <div class="col-md-12">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">Reg no.</th>
-              <th scope="col">First Name</th>
-              <th scope="col">Second Name</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Course</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let student of Students">
-              <td>{{ student.id}}</td>
-              <td>{{ student.fname}}</td>
-              <td>{{ student.sname}}</td>
-              <td>{{ student.gender}}</td>
-              <td>{{ student.course}}</td>
-                <span class="edit" routerLink="/student-edit/{{student.id}}"> Edit </span>
-                <span class="delete" (click)="deleteStudent(student.id)"> Delete </span>
-              </tr>
-          </tbody>
-        </table>
-      </div>
-  
-    </div>
-  
+<div class="card shadow mb-5 h-100">
+  <!-- Card Header - Dropdown -->
+  <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary">Records</h6>
   </div>
+  <!-- Card Body -->
+  <div class="card-body">
+    <div class="container custom-container-2">
+
+      <!-- Show it when there is no Student -->
+      <div class="no-data text-center" *ngIf="Students.length == 0">
+        <p>There are no students added yet!</p>
+        <hr>
+        <p>Kindly use form in right panel to add Students and get started</p>
+      </div>
+    
+      <!-- Student list table, it hides when there is no student -->
+      <div *ngIf="Students.length !== 0">
+        <div class="col-md-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Reg no.</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Second Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Course</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let student of Students">
+                <td>{{ student.id}}</td>
+                <td>{{ student.fname}}</td>
+                <td>{{ student.sname}}</td>
+                <td>{{ student.gender}}</td>
+                <td>{{ student.course}}</td>
+                  <button class="edit btn btn-circle text-light bg-primary" routerLink="/student-edit/{{student.id}}"> <small>EDIT</small></button>
+                  <button class="delete btn btn-circle text-light bg-danger" (click)="deleteStudent(student.id)"> <small>DELETE</small></button>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+    
+      </div>
+    
+    </div>
+  </div>
+</div>

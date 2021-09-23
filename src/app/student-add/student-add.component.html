@@ -5,39 +5,57 @@
   </div>
   <!-- Card Body -->
   <div class="card-body pb-0" style="min-height: 300px;">
-        <form [formGroup] = "addForm">
-          <div class="form-group">
-            <input type="text" [(ngModel)]="studentDetails.id" 
-            class="form-control"  placeholder="Reg No.">
-            <small class="text-danger" >Required</small>
-          </div>
-
-          <div class="form-group">
-            <input type="text" [(ngModel)]="studentDetails.course"
-             class="form-control" placeholder="Course">
-          </div> 
-
-          <div class="form-group ">
-            <input type="text" [(ngModel)]="studentDetails.fname" 
-            class="form-control" placeholder="First Name">
-          </div>
-      
-          <div class="form-group">
-            <input type="text" [(ngModel)]="studentDetails.sname"
-            class="form-control"  placeholder="Second Name">
-          </div>
-      
-          <div class="form-group">
-            <input type="text" [(ngModel)]="studentDetails.gender" 
-            class="form-control" placeholder="Gender">
-          </div>  
-               
-          <div class="form-group">
-            <button class="btn btn-outline-dark mx-auto m-0 w-25 p-1 btn-lg btn-block"
-            type="submit"
-            (click)="addStudent()">Add</button>
-           </div>
-
-        </form>
+    <div [formGroup]="addForm">
+      <div class="form-group">
+        <input type="text" [class.is-invalid]="id.invalid && id.touched"
+                name="id" [formControl]="id"
+                class="form-control" placeholder="Registration No.">
+        <small [hidden]="id.valid || id.untouched" class="text-danger">4 digit number Required</small>
       </div>
+
+        <div class="form-group">
+          <input type="text" [class.is-invalid]="fname.invalid && fname.touched"
+                name="fname" [formControl]="fname"
+                class="form-control" placeholder="First Name">
+          <small [hidden]="fname.valid || fname.untouched" class="text-danger">Required</small>
+        </div>
+
+        <div class="form-group">
+          <input type="text"  [class.is-invalid]="sname.invalid && sname.touched"
+               name="sname" [formControl]="sname" 
+               class="form-control" placeholder="Second name">
+          <small [hidden]="sname.valid || sname.untouched" class="text-danger">Required</small>
+        </div>    
+        
+        <div class="form-group">
+          <label>Course</label>
+          <select type="text"  [class.is-invalid]="course.invalid && course.touched"
+                name="course" [formControl]="course"
+                class="form-control custom-control custom-select">
+            <option selected disabled> -- select course --</option>
+            <option *ngFor = "let course of courses">{{course}}</option>    
+          </select>
+          <small [hidden]="course.valid || course.untouched" class="text-danger">Required</small>
+        </div>
+
+      <div class="form-group">
+        <select type="text" [class.is-invalid]="gender.invalid && gender.touched"
+               name="gender" [formControl]="gender"
+               class="form-control custom-control custom-select" placeholder="Gender">
+            <option selected disabled> -- select course --</option>
+            <option *ngFor = "let gender of genderOptions">{{gender}}</option>    
+        </select>
+        <small [hidden]="gender.valid || gender.untouched" class="text-danger">Required</small>
+      </div>
+      
+      <div class="form-group">
+        <button class="btn btn-primary btn-sm btn-block w-50 mx-auto" 
+                type="submit" (click)="addStudent()"
+                [disabled]="!addForm.valid"
+                >
+          Add Student
+        </button>
+      </div>
+
+  </div>
 </div>    

@@ -1,19 +1,11 @@
 {
-  "posts": [
+  "students": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": "2222",
+      "fname": "aisha",
+      "sname": "xx",
+      "gender": "Male",
+      "course": "Computer Science"
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

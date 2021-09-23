@@ -33,6 +33,8 @@ export class StudentDisplayComponent implements OnInit {
       this.restApi.deleteStudent(id).subscribe(
         data => {
           this.loadStudents()
+          //Refresh page
+          location.reload()
         })
     }
    }

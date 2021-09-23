@@ -3,7 +3,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-dark-blue sidebar sidebar-dark accordion" id="accordionSidebar">
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center my-2 d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
@@ -26,7 +26,6 @@
       <!-- Main Content -->
       <div id="content">
 
-
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
@@ -34,74 +33,47 @@
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">School XYZ Bootcamp</h1>
           </div>
-
           <!-- Content Row -->
           <div class="row">
-        <!--Middle section-->
-            <div class="col-8">
-                <!-- Students list display-->
-                <div class="card shadow mb-5 h-100">
-                    <!-- Card Header - Dropdown -->
-                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Records</h6>
-                    </div>
-                    <!-- Card Body -->
-                    <div class="card-body">
-                        <app-student-display></app-student-display>
-                    </div>
-                </div>
+          <!--Middle section-->
+            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <!--To Display list OR Update form -->
+              <router-outlet></router-outlet>
             </div>
         <!--End of middle section-->
         <!--section 2-->
-            <div class="col-4 row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mt-2 row">
                 <!-- Card 1 Total Students  -->
                 <div class="mb-4 col-6">
-                <div class="card border-left-primary shadow h-100 py-2">
-                    <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Students Registered</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
-                        </div>
-                        <div class="col-auto">
-                            <!--Logo-->
-                        </div>
-                    </div>
-                    </div>
-                </div>
+                  <app-card 
+                    title="Total Number Registered Students"
+                    [number]="Students.length"  
+                  >
+                  </app-card>
                 </div>
                 <!-- Card 2 Activated Students -->
                 <div class="mb-4 col-6">
-                    <div class="card border-left-success shadow h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Activated Students</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">80</div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
+                  <app-card 
+                    title="Activated Students"
+                    [number]="Students.length"  
+                  >
+                  </app-card>
                 </div>
                 <!-- Add Student Form -->
                 <app-student-add></app-student-add>
             </div>
             <!--End of section 2-->
-
-
           </div>
 
         </div>
         <!-- /.container-fluid -->
-
       </div>
       <!-- End of Main Content -->
-
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+            <span>Copyright &copy; Student Database Manager</span>
           </div>
         </div>
       </footer>
